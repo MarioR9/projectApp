@@ -14,6 +14,7 @@ export default class App extends React.Component {
   }
   handleModalShow=()=>{
     this.setState({ modalShow: true})
+    console.log("modal")
   }
 
   render(){

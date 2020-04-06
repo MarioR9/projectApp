@@ -22,7 +22,7 @@ export default class Navigation extends React.Component{
             </NavDropdown>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Nav.Link  inline href="#link">Link</Nav.Link>
             <Button variant="outline-success">Search</Button>
           </Form>
       </Navbar.Collapse>

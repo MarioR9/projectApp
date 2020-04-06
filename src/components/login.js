@@ -1,11 +1,28 @@
 import React from 'react'
 import { Modal,Button  } from 'react-bootstrap';
+import FacebookLogin from 'react-facebook-login';
 
-function Login(props) {
+
+export default class Login extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            isLoggedIn: false,
+            name: '',
+            email: '',
+            picture:''
+          };
+    }
+
+    render(){
+    const responseFacebook = (response) => {
+        console.log(response);
+      }
+    const componentClicked = () => console.log('Clicked')  
         return(
             <div>
                  <Modal
-                {...props}
+                show={this.props.show}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
@@ -17,17 +34,18 @@ function Login(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <h4>Facebook</h4>
-                    <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                    </p>
+                    <FacebookLogin
+                    appId="2854741097907041"
+                    autoLoad={false}
+                    fields="name,email,picture"
+                    onClick={componentClicked}
+                    callback={responseFacebook} />,
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
                 </Modal>
             </div>
         )
+    }
 }
-export default Login 
