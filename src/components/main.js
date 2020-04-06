@@ -1,4 +1,5 @@
 import React from 'react'
+import Events from './events.js'
 
 export default class Main extends React.Component{
    
@@ -21,10 +22,8 @@ handleUsers=()=>{
    render(){
        return(
            <div class="main">
-               <h1>Hello 2</h1>
-               <div>
-                <button onClick={this.handleUsers}>Click</button>
-               </div>
+               <Events/>
+               
            </div>
        )
    }
