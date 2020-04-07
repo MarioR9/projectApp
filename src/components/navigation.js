@@ -7,7 +7,6 @@ export default class Navigation extends React.Component{
     return (
       <div >
       <Navbar bg="dark"  variant="dark" expand="lg">
-      <Navbar.Brand href="#home">App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -23,6 +22,7 @@ export default class Navigation extends React.Component{
           </Nav>
           <Form inline>
           <Nav.Link  inline href="#link">Link</Nav.Link>
+          <Navbar.Brand href="#home">User</Navbar.Brand>
             <Button variant="outline-success">Search</Button>
           </Form>
       </Navbar.Collapse>
