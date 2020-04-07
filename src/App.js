@@ -3,7 +3,6 @@ import './App.css';
 import Main from './components/main.js'
 import NavBar from './components/navigation.js'
 import { Button } from 'react-bootstrap';
-import Login from './components/login.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,11 +40,11 @@ export default class App extends React.Component {
   }
 
   handleLogin=()=>{
-        window.FB.login(function(response) {
+        window.FB.login((response)=> {
           console.log(response)
           if (response.authResponse) {
            console.log('Welcome!  Fetching your information.... ');
-           window.FB.api('/me', {fields: "picture , name, email "}, function(resp) {
+           window.FB.api('/me', {fields: "picture , name, email "}, (resp) =>{
              debugger
              console.log(resp);
              this.setState({name: resp.name})
@@ -75,10 +74,7 @@ export default class App extends React.Component {
         handleModalShow={this.handleModalShow}
       />
       <Main/>
-      <Login
-        show={this.state.modalShow}
-        onHide={() => this.setState({ modalShow: false})}
-      />
+     
       <Button onClick={this.handleLogin}>
         FB Login
       </Button>
