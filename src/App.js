@@ -18,7 +18,7 @@ export default class App extends React.Component {
   componentDidMount(){
     window.fbAsyncInit = function() {
       window.FB.init({
-        appId            : '2854741097907041',
+        appId            : '--appId--',
         autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v6.0'
