@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, NavDropdown,Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, NavDropdown,Nav, Form, Button } from 'react-bootstrap';
 
 export default class Navigation extends React.Component{
 
@@ -10,8 +10,6 @@ export default class Navigation extends React.Component{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {/* whill call hanlder at app.js to start modal and log in to facebook. */}
-            <Nav.Link onClick={() => this.props.handleModalShow()}>Log In</Nav.Link> 
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -21,8 +19,8 @@ export default class Navigation extends React.Component{
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline>
-          <Nav.Link  inline href="#link">Link</Nav.Link>
+          <Form inline="true">
+          <Nav.Link  inline="true" href="#link">Link</Nav.Link>
           <Navbar.Brand href="#home">User</Navbar.Brand>
             <Button variant="outline-success">Search</Button>
           </Form>
