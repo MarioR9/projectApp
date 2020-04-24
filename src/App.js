@@ -20,7 +20,6 @@ export default class App extends React.Component {
         .then((data) => {
         console.log('Success:', data);
         this.setState({events: data})
-        debugger
         })
         .catch((error) => {
         console.error('Error:', error);
