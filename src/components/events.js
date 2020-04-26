@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, CardDeck, Button } from 'react-bootstrap';
-import Event from './event.js'
 
 export default class Events extends React.Component{
   
