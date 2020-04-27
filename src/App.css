@@ -47,3 +47,20 @@
 .fb {
   color: red;
 }
+
+.card {
+  height: 180px;
+  width: 200px; 
+  opacity: 0.4;
+  padding: 1px;
+  filter: grayscale(30%);
+  
+}
+.card-img {
+  height: 180px;; 
+  
+}
+.card:hover { 
+    opacity: 1.0;
+    filter: grayscale(0%);
+}

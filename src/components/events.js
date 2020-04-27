@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardDeck, Button } from 'react-bootstrap';
+import { CardDeck } from 'react-bootstrap';
 
 export default class Events extends React.Component{
   
@@ -10,20 +10,12 @@ export default class Events extends React.Component{
 
                 <CardDeck>
                 {this.props.events.map(event => 
-                      <Card key={event.id} style={{ width: '18rem' }}>
-                      <Card.Img variant="top" src={event.images} />
-                      <Card.Body>
-                      <Card.Title>{event.title}</Card.Title>
-                          <Card.Text>
-                          {event.description}
-                          </Card.Text>
-                          <Card.Text>
-                          {event.location}
-                          </Card.Text>
-                          <Button onClick={()=>{console.log("CLicked")}} variant="primary">Go somewhere</Button>
-                      </Card.Body>
-                      </Card>
-                    
+                  <div className="card" key={event.id}>
+                  <img className="card-img" src={event.images}  alt="Card image"/>
+                  <div className="card-img-overlay">
+                      <p className="card-text">{event.description}</p>
+                  </div>
+                    </div>
                 )}
                 
                 </CardDeck>
