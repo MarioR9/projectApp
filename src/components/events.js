@@ -1,24 +1,26 @@
 import React from 'react'
-import { CardDeck } from 'react-bootstrap';
+import { Button , CardGroup} from 'react-bootstrap';
 
 export default class Events extends React.Component{
   
     render(){
         return(
-            <div>
+            <div className="container-event">
                 <h1>Events</h1>
 
-                <CardDeck>
+                <CardGroup >
                 {this.props.events.map(event => 
                   <div className="card" key={event.id}>
-                  <img className="card-img" src={event.images}  alt="Card image"/>
+                  <img className="card-img" src={event.images}  alt="CardBck"/>
                   <div className="card-img-overlay">
-                      <p className="card-text">{event.description}</p>
+                    <h1>{event.title}</h1>
+                    <p>{event.description}</p>
+                    <Button variant="success">Learn more</Button>
                   </div>
                     </div>
                 )}
                 
-                </CardDeck>
+                </CardGroup>
 
             
             </div>
