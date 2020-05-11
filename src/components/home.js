@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default class Home extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {events: []};
+        this.state = {events: [], event: " "};
       }
     
       componentDidMount=()=>{
@@ -20,7 +20,7 @@ export default class Home extends React.Component{
             .then((response) => response.json())
             .then((data) => {
             console.log('Success:', data);
-            this.setState({events: data})
+            this.setState({events: data, event: data[0].deporte}) //respose will set the state for events heading.
             })
             .catch((error) => {
             console.error('Error:', error);
@@ -37,7 +37,7 @@ export default class Home extends React.Component{
                 < Categories/>
                 </Col>
                 <Col>
-                <Events events={this.state.events}/>
+                <Events events={this.state.events} event={this.state.event}/>
                 </Col>
               </Row>
             </Container>

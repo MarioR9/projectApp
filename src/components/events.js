@@ -1,11 +1,12 @@
 import React from 'react'
 import { Button , CardGroup, Container, Row, Col } from 'react-bootstrap';
 export default class Events extends React.Component{
-  
+   
     render(){
+        
         return(
             <div className="container-event">
-                <h1>Events</h1>
+                <h1>{this.props.event}</h1>
                 <Container>
                     <Row>
                         <Col>
@@ -15,9 +16,10 @@ export default class Events extends React.Component{
                   <img className="card-img" src={event.images}  alt="CardBck"/>
                   <div className="card-img-overlay">
                     <h1>{event.title}</h1>
-                    <Button variant="success">Learn more</Button>
                   </div>
+                  
                     </div>
+                    <Button className="vermas-Btn" variant="success">Ver mas</Button>
                 </CardGroup>
                         )}
                         </Col>

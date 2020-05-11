@@ -50,3 +50,8 @@ max-width: 500px;
 max-height: 600px;
 
 }
+
+.vermas-Btn {
+  border: double;
+  background-color: rgb(86, 161, 92);
+}
