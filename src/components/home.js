@@ -1,5 +1,6 @@
 import React from 'react'
 import Events from './events.js'
+import Categories from './categories.js'
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -32,13 +33,8 @@ export default class Home extends React.Component{
 
             <Container fluid>
               <Row>
-                <Col className="event-catagory">
-                <Row>
-                  <Col>1</Col>
-                </Row>
-                <Row>
-                  <Col>1</Col>
-                </Row>
+                <Col>
+                < Categories/>
                 </Col>
                 <Col>
                 <Events events={this.state.events}/>
