@@ -1,10 +1,16 @@
 import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default class Categories extends React.Component{
     render(){
         return(
             <div className="event-catagory">
-                Categories
+                <div>Categories</div>
+                <Container>
+                    <Row>
+                        <Col></Col>
+                    </Row>
+                </Container>
             </div>
         )
     }
