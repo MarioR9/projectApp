@@ -33,3 +33,20 @@
   height: 370px;; 
   width: 630px;
 }
+
+.main-screen {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.event-catagory {
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+border: solid;  color: red;
+max-width: 500px;
+max-height: 600px;
+
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import Events from './events.js'
 
+import { Container, Row, Col } from 'react-bootstrap';
+
 export default class Home extends React.Component{
     constructor(props) {
         super(props);
@@ -27,8 +29,23 @@ export default class Home extends React.Component{
    render(){
        return(
            <div className="main">
-               <Events events={this.state.events}/>
-               
+
+            <Container fluid>
+              <Row>
+                <Col className="event-catagory">
+                <Row>
+                  <Col>1</Col>
+                </Row>
+                <Row>
+                  <Col>1</Col>
+                </Row>
+                </Col>
+                <Col>
+                <Events events={this.state.events}/>
+                </Col>
+              </Row>
+            </Container>
+            
            </div>
        )
    }

@@ -16,7 +16,7 @@ export default class App extends React.Component {
   render(){
    
     return (
-    <div >
+    <div className="main-screen">
       <div>
       <NavBar/>
       </div>
