@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import Home from './components/home.js'
-import NavBar from './components/navigation.js'
+import NavBar from './components/navigation.js' //exported component. 
 
 export default class App extends React.Component {
   
