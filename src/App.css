@@ -55,3 +55,8 @@ max-height: 600px;
   border: double;
   background-color: rgb(86, 161, 92);
 }
+
+.nav-color {
+background-color: rgba(18, 141, 7, 0.781);
+ 
+}
