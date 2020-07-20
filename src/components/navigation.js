@@ -12,11 +12,17 @@ export default class Navigation extends React.Component{
           <Nav className="mr-auto">
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Deportes</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+
+              <NavDropdown title="deportes" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/futbol">futbol</NavDropdown.Item>
+              <NavDropdown.Item href="/basket">basket</NavDropdown.Item>
+              <NavDropdown.Item href="/golf">golf</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+              <NavDropdown.Item href="#action/3.2">Eventos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Noticias</NavDropdown.Item>
             </NavDropdown>
           </Nav>
             <Button variant="outline-success">Profile</Button>
