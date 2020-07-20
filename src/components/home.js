@@ -9,7 +9,8 @@ export default class Home extends React.Component{
         super(props);
         this.state = {events: [], event: " "};
       }
-    
+    //fetch all event on load of the page.
+    //maybe be better to load on request only. but all at once.
       componentDidMount=()=>{
         fetch('http://localhost:3000/api/v1/events', {
           method: 'GET', // or 'PUT'
