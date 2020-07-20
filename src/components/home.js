@@ -37,6 +37,8 @@ export default class Home extends React.Component{
                 <Col>
                 <Events events={this.state.events} event={this.state.event}/>
                 </Col>
+                <Col>
+                </Col>
               </Row>
             </Container>
             
