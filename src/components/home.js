@@ -34,9 +34,6 @@ export default class Home extends React.Component{
             <Container fluid>
               <Row>
                 <Col>
-                < Categories/>
-                </Col>
-                <Col>
                 <Events events={this.state.events} event={this.state.event}/>
                 </Col>
               </Row>
