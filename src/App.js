@@ -35,8 +35,7 @@ export default class App extends React.Component {
         });
   }
 handleCategorySelection=(e)=>{
-this.setState({event: e.target.innerText})
-console.log(this.state.event)
+  this.setState({event: e.target.text})
 }
 
   render(){
@@ -51,6 +50,9 @@ console.log(this.state.event)
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home'>
+            <Home events={this.state.events} event={this.state.event}/>
+            </Route>
+            <Route path='/futbol'>
             <Home events={this.state.events} event={this.state.event}/>
             </Route>
             
