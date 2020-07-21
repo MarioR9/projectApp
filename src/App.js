@@ -25,6 +25,12 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home' component={Home}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/home' component={Home}/>
+            
           </Switch>
           </div>
       </Router>

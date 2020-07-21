@@ -17,14 +17,12 @@ export default class Navigation extends React.Component{
               <NavDropdown.Item href="/golf">Golf</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">
-              <NavDropdown.Item href="/Cumpleanos">Cumpleanos</NavDropdown.Item>
-              <NavDropdown.Item href="/Matrimonio">Matrimonio</NavDropdown.Item>
-              <NavDropdown.Item href="/Graduacion">Graduacion</NavDropdown.Item>
+              <NavDropdown.Item href="/cumpleanos">Cumpleanos</NavDropdown.Item>
+              <NavDropdown.Item href="/matrimonio">Matrimonio</NavDropdown.Item>
+              <NavDropdown.Item href="/graduacion">Graduacion</NavDropdown.Item>
             </NavDropdown>
-            
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Noticias</NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown.Item href="noticias">Noticias</NavDropdown.Item>
           </Nav>
             <Button variant="outline-success">Profile</Button>
       </Navbar.Collapse>
