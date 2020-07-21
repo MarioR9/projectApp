@@ -9,7 +9,7 @@ import {
 
 import Home from './components/home.js'
 import NavBar from './components/navigation.js' //exported component. 
-
+import Noticias from './components/noticias.js'
 export default class App extends React.Component {
   
 
@@ -25,12 +25,12 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home' component={Home}/>
+            <Route path='/noticias' component={Noticias}/>
+            <Route path='/futbol' component={Home}/>
+            <Route path='/basket' component={Home}/>
+            <Route path='/golf' component={Home}/>
             <Route path='/home' component={Home}/>
-            <Route path='/home' component={Home}/>
-            <Route path='/home' component={Home}/>
-            <Route path='/home' component={Home}/>
-            <Route path='/home' component={Home}/>
-            
+
           </Switch>
           </div>
       </Router>

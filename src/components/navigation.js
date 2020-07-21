@@ -22,8 +22,8 @@ export default class Navigation extends React.Component{
               <NavDropdown.Item href="/graduacion">Graduacion</NavDropdown.Item>
             </NavDropdown>
             </NavDropdown>
-            <NavDropdown.Item href="noticias">Noticias</NavDropdown.Item>
           </Nav>
+          <NavDropdown.Item href="/noticias">Noticias</NavDropdown.Item>
             <Button variant="outline-success">Profile</Button>
       </Navbar.Collapse>
       </Navbar>
