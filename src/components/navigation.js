@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navbar, NavDropdown,Nav, Button } from 'react-bootstrap';
 
+let names;
+let deporte;
 export default class Navigation extends React.Component{
   constructor(props) {
     super(props);
@@ -12,6 +14,10 @@ export default class Navigation extends React.Component{
   }
   
   render(){
+    names = this.props.events.map(e => e.deporte)
+    console.log(names)
+    deporte = [...new Set(names)] //remote duplicate for each deporte.
+    console.log(deporte)
     return (
       <div >
       <Navbar className="nav-color" variant="light" expand="lg">
@@ -20,8 +26,8 @@ export default class Navigation extends React.Component{
           <Nav className="mr-auto" >
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
-                {this.props.events.map(element => 
-                <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>{element.deporte}</NavDropdown.Item>
+                {deporte.map(element => 
+                <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>{element}</NavDropdown.Item>
                 )}
              
             </NavDropdown>

@@ -38,6 +38,7 @@ export default class App extends React.Component {
         });
   }
 handleCategorySelection=(event)=>{
+  let t = this
   debugger
   this.setState({event: event})
   debugger
