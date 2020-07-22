@@ -14,8 +14,8 @@ export default class Navigation extends React.Component{
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
               <NavDropdown.Item href="/futbol" onClick={this.props.handleCategorySelection}>Futbol</NavDropdown.Item>
-              <NavDropdown.Item href="/basket">Basket</NavDropdown.Item>
-              <NavDropdown.Item href="/golf">Golf</NavDropdown.Item>
+              <NavDropdown.Item href="/basket" onClick={this.props.handleCategorySelection}>Basket</NavDropdown.Item>
+              <NavDropdown.Item href="/golf" onClick={this.props.handleCategorySelection}>Golf</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">
               <NavDropdown.Item href="/cumpleanos">Cumpleanos</NavDropdown.Item>

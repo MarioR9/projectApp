@@ -1,15 +1,17 @@
 import React from 'react'
 import { Button , CardGroup, Container, Row, Col } from 'react-bootstrap';
+
 export default class Events extends React.Component{
-   
+  
     render(){
+        let currentEvent= this.props.events.filter(event => event.deporte == this.props.event)
         return(
             <div className="container-event">
                 <h1>{this.props.event}</h1>
                 <Container>
                     <Row>
                         <Col>
-                  {this.props.events.map(event => 
+                  {currentEvent.map(event => 
                         <CardGroup >
                   <div className="card" key={event.id}>
                   <img className="card-img" src={event.images}  alt="CardBck"/>

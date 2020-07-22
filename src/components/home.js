@@ -1,5 +1,4 @@
 import React from 'react'
-import Events from './events.js'
 import { Card,Button , CardDeck, Container, Row, Col } from 'react-bootstrap';
 
 export default class Home extends React.Component{
