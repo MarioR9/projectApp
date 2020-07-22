@@ -20,9 +20,10 @@ export default class Navigation extends React.Component{
           <Nav className="mr-auto" >
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
-              <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>Futbol</NavDropdown.Item>
-              <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>Basket</NavDropdown.Item>
-              <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>Golf</NavDropdown.Item>
+                {this.props.events.map(element => 
+                <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>{element.deporte}</NavDropdown.Item>
+                )}
+             
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">
               <NavDropdown.Item href="/cumpleanos">Cumpleanos</NavDropdown.Item>

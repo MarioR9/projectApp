@@ -48,7 +48,7 @@ handleCategorySelection=(event)=>{
     return (
     <div className="main-screen">
       <div>
-      <NavBar handleCategorySelection={this.handleCategorySelection}/>
+      <NavBar events={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
       </div>
       <Router>
         <div className='main'>
