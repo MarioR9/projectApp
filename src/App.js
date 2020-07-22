@@ -17,7 +17,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {events: [], 
-                  event: "Futbol"};
+                  event: ""};
   }
 //fetch all event on load of the page.
 //maybe be better to load on request only. but all at once.
@@ -37,10 +37,10 @@ export default class App extends React.Component {
         console.error('Error:', error);
         });
   }
-handleCategorySelection=(e)=>{
+handleCategorySelection=(event)=>{
   debugger
-  return this.setState({event: e.target.text})
-
+  this.setState({event: event})
+  debugger
 }
 
   render(){
@@ -57,7 +57,7 @@ handleCategorySelection=(e)=>{
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/events/${this.state.event}`}>
+            <Route path={`/${this.state.event}`}>
             <Events events={this.state.events} event={this.state.event}/>
             </Route>
             <Route path='/noticias'>
