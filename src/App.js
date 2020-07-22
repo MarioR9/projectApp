@@ -57,7 +57,7 @@ handleCategorySelection=(e)=>{
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path='/events'>
+            <Route path={`/events/${this.state.event}`}>
             <Events events={this.state.events} event={this.state.event}/>
             </Route>
             <Route path='/noticias'>

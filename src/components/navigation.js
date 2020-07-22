@@ -2,7 +2,14 @@ import React from 'react'
 import { Navbar, NavDropdown,Nav, Button } from 'react-bootstrap';
 
 export default class Navigation extends React.Component{
-
+  constructor(props) {
+    super(props);
+    this.state = {event: ""};
+  }
+  handleCategorySelection=(e)=>{
+   this.setState({event: e.target.text})
+   this.props.handleCategorySelection(e)
+  }
   
   render(){
     return (
@@ -13,7 +20,7 @@ export default class Navigation extends React.Component{
           <Nav className="mr-auto" >
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/futbol" onClick={this.props.handleCategorySelection}>Futbol</NavDropdown.Item>
+              <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>Futbol</NavDropdown.Item>
               <NavDropdown.Item href="/basket" onClick={this.props.handleCategorySelection}>Basket</NavDropdown.Item>
               <NavDropdown.Item href="/golf" onClick={this.props.handleCategorySelection}>Golf</NavDropdown.Item>
             </NavDropdown>
