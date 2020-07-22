@@ -12,7 +12,7 @@ export default class Home extends React.Component{
             <Container fluid>
               <Row>
                 <Col>
-                <Events events={this.props.events} event={this.props.event}/>
+               
                 </Col>
                 <Col>
                 </Col>

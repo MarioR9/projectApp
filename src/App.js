@@ -10,11 +10,14 @@ import {
 import Home from './components/home.js'
 import NavBar from './components/navigation.js' //exported component. 
 import Noticias from './components/noticias.js'
+import Events from './components/events.js'
+
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {events: [], event: " "};
+    this.state = {events: [], 
+                  event: ""};
   }
 //fetch all event on load of the page.
 //maybe be better to load on request only. but all at once.
@@ -35,7 +38,8 @@ export default class App extends React.Component {
         });
   }
 handleCategorySelection=(e)=>{
-  this.setState({event: e.target.text})
+  return this.setState({event: e.target.text})
+
 }
 
   render(){
@@ -43,20 +47,21 @@ handleCategorySelection=(e)=>{
     return (
     <div className="main-screen">
       <div>
-      <NavBar event={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
+      <NavBar handleCategorySelection={this.handleCategorySelection}/>
       </div>
       <Router>
         <div className='main'>
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home'>
-            <Home events={this.state.events} event={this.state.event}/>
+            <Home events={this.state.events}/>
             </Route>
             <Route path='/futbol'>
-            <Home events={this.state.events} event={this.state.event}/>
+            <Events events={this.state.events} event={this.state.event}/>
             </Route>
-            
-           
+            <Route path='/noticias'>
+            <Noticias/>
+            </Route>
           </Switch>
           </div>
       </Router>
