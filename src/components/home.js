@@ -5,15 +5,15 @@ export default class Home extends React.Component{
    
    render(){
        return(
-           <div className="main">
+           <div className="container-event">
 
             <Container fluid>
               <Row>
                 <Col>
                <h2>Proximos eventos</h2>
                {this.props.events.map(event => 
-                      <CardDeck>
-                      <Card>
+                      <CardDeck key={event.id}>
+                      <Card >
                         <Card.Body>
                           <Card.Title>{event.title}</Card.Title>
                           <Card.Text>

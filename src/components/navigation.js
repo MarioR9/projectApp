@@ -6,18 +6,17 @@ let deporte;
 export default class Navigation extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {event: ""};
+    this.state = {href: ""};
   }
   handleCategorySelection=(e)=>{
-   this.setState({event: e.target.text})
+    e.preventDefault()
+   this.setState({href: e.target.text})
    this.props.handleCategorySelection(e.target.text)
   }
   
   render(){
     names = this.props.events.map(e => e.deporte)
-    console.log(names)
     deporte = [...new Set(names)] //remote duplicate for each deporte.
-    console.log(deporte)
     return (
       <div >
       <Navbar className="nav-color" variant="light" expand="lg">
@@ -27,9 +26,8 @@ export default class Navigation extends React.Component{
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
                 {deporte.map(element => 
-                <NavDropdown.Item href={`/${this.state.event}`} onClick={this.handleCategorySelection}>{element}</NavDropdown.Item>
+                <NavDropdown.Item key={element} href={`/${this.state.href}`} onClick={this.handleCategorySelection}>{element}</NavDropdown.Item>
                 )}
-             
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">
               <NavDropdown.Item href="/cumpleanos">Cumpleanos</NavDropdown.Item>

@@ -14,11 +14,14 @@ import Events from './components/events.js'
 
 
 export default class App extends React.Component {
+  
   constructor(props) {
     super(props);
-    this.state = {events: [], 
-                  event: ""};
+    this.state = {
+      currentEvent: "",
+      events: []};
   }
+
 //fetch all event on load of the page.
 //maybe be better to load on request only. but all at once.
   componentDidMount=()=>{
@@ -37,15 +40,13 @@ export default class App extends React.Component {
         console.error('Error:', error);
         });
   }
-handleCategorySelection=(event)=>{
-  let t = this
-  debugger
-  this.setState({event: event})
-  debugger
+handleCategorySelection=(input)=>{
+ this.setState({currentEvent: input})
+
 }
 
   render(){
-   
+  
     return (
     <div className="main-screen">
       <div>
@@ -58,11 +59,11 @@ handleCategorySelection=(event)=>{
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/${this.state.event}`}>
-            <Events events={this.state.events} event={this.state.event}/>
+            <Route path={`/${this.state.currentEvent}`}>
+            <Events events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/noticias'>
-            <Noticias/>
+            <Noticias events={this.state.events} event={this.state.currentEvent}/>
             </Route>
           </Switch>
           </div>
