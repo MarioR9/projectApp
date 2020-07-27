@@ -4,15 +4,7 @@ import { Navbar, NavDropdown,Nav, Button } from 'react-bootstrap';
 let names;
 let deporte;
 export default class Navigation extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {href: ""};
-  }
-  handleCategorySelection=(e)=>{
-    e.preventDefault()
-   this.setState({href: e.target.text})
-   this.props.handleCategorySelection(e.target.text)
-  }
+  
   
   render(){
     names = this.props.events.map(e => e.deporte)
@@ -26,7 +18,7 @@ export default class Navigation extends React.Component{
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
                 {deporte.map(element => 
-                <NavDropdown.Item key={element} href={`/${this.state.href}`} onClick={this.handleCategorySelection}>{element}</NavDropdown.Item>
+                <NavDropdown.Item key={element} href={`/${element}`} onClick={this.props.handleCategorySelection}>{element}</NavDropdown.Item>
                 )}
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">
@@ -37,7 +29,13 @@ export default class Navigation extends React.Component{
             </NavDropdown>
           </Nav>
           <NavDropdown.Item href="/noticias">Noticias</NavDropdown.Item>
-            <Button variant="outline-success">Profile</Button>
+            <Button variant="outline-success">
+              <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+              <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+              </svg>
+            </Button>
       </Navbar.Collapse>
       </Navbar>
       </div>

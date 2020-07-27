@@ -40,8 +40,8 @@ export default class App extends React.Component {
         console.error('Error:', error);
         });
   }
-handleCategorySelection=(input)=>{
- this.setState({currentEvent: input})
+handleCategorySelection=(e)=>{
+this.setState({currentEvent: e.target.text})
 
 }
 
