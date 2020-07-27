@@ -38,9 +38,6 @@ export default class App extends React.Component {
         console.log('Success:', data);
         this.setState({events: data}) //respose will set the state for events heading.
         })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
       }
   }
 handleCategorySelection=(link)=>{
