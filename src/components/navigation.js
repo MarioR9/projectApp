@@ -18,7 +18,7 @@ export default class Navigation extends React.Component{
             <NavDropdown  title="Categorias" id="basic-nav-dropdown">
               <NavDropdown  bg="dark"  variant="dark" expand="lg" title="Deportes" id="basic-nav-dropdown">
                 {deporte.map(element => 
-                <NavDropdown.Item key={element} href={`/${element}`} onSelect={this.props.handleCategorySelection}>{element}</NavDropdown.Item>
+                <NavDropdown.Item key={element} href={`/${element}`} onSelect={()=>this.props.handleCategorySelection(element)}>{element}</NavDropdown.Item>
                 )}
             </NavDropdown>
             <NavDropdown title="Eventos"  id="basic-nav-dropdown">

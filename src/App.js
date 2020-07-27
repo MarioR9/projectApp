@@ -17,14 +17,16 @@ export default class App extends React.Component {
   
   constructor(props) {
     super(props);
+    
     this.state = {
-      currentEvent: "",
+      currentEvent: " ",
       events: []};
   }
 
 //fetch all event on load of the page.
 //maybe be better to load on request only. but all at once.
   componentDidMount=()=>{
+    if(this.state.events.length == 0){
     fetch('http://localhost:3000/api/v1/events', {
       method: 'GET', // or 'PUT'
       headers: {
@@ -39,16 +41,16 @@ export default class App extends React.Component {
         .catch((error) => {
         console.error('Error:', error);
         });
+      }
   }
-handleCategorySelection=(e)=>{
-this.setState({currentEvent: e.target.text})
-e.preventDefault()
+handleCategorySelection=(link)=>{
+this.setState({currentEvent: link})
 }
 
   render(){
-  
     return (
     <div className="main-screen">
+      {console.log("loadgin")}
       <div>
       <NavBar events={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
       </div>
@@ -59,7 +61,7 @@ e.preventDefault()
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/${this.state.currentEvent}`}>
+            <Route path={`/events`}>
             <Events events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/noticias'>
