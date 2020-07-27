@@ -42,7 +42,7 @@ export default class App extends React.Component {
   }
 handleCategorySelection=(e)=>{
 this.setState({currentEvent: e.target.text})
-
+e.preventDefault()
 }
 
   render(){
