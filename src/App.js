@@ -4,8 +4,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,Redirect
-} from "react-router-dom";
+  Route,Redirect} from "react-router-dom";
 
 import Home from './components/home.js'
 import NavBar from './components/navigation.js' //exported component. 
@@ -17,16 +16,14 @@ export default class App extends React.Component {
   
   constructor(props) {
     super(props);
-    
     this.state = {
-      currentEvent: " ",
+      currentEvent: "",
       events: []};
   }
 
 //fetch all event on load of the page.
 //maybe be better to load on request only. but all at once.
   componentDidMount=()=>{
-    if(this.state.events.length == 0){
     fetch('http://localhost:3000/api/v1/events', {
       method: 'GET', // or 'PUT'
       headers: {
@@ -38,12 +35,13 @@ export default class App extends React.Component {
         console.log('Success:', data);
         this.setState({events: data}) //respose will set the state for events heading.
         })
-      }
   }
-handleCategorySelection=(link)=>{
-this.setState({currentEvent: link})
-}
 
+  handleCategorySelection=(link)=>{
+
+    this.setState({currentEvent: link})
+  }
+  
   render(){
     return (
     <div className="main-screen">
@@ -58,7 +56,7 @@ this.setState({currentEvent: link})
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/events`}>
+            <Route path={`/${this.state.currentEvent}`}>
             <Events events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/noticias'>
