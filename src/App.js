@@ -12,6 +12,7 @@ import Home from './components/home.js'
 import NavBar from './components/navigation.js' //exported component. 
 import Noticias from './components/noticias.js'
 import Events from './components/events.js'
+import User from './components/user.js'
 
 export default class App extends React.Component {
   
@@ -52,11 +53,12 @@ export default class App extends React.Component {
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/${this.state.currentEvent}`}>
-            <Events events={this.state.events} event={this.state.currentEvent}/>
-            </Route>
+           
             <Route path='/noticias'>
             <Noticias events={this.state.events} event={this.state.currentEvent}/>
+            </Route>
+            <Route path='/user'>
+            <User/>
             </Route>
           </Switch>
       </Router>

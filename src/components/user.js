@@ -4,7 +4,7 @@ export default class User extends React.Component{
     render(){
         return(
             <div>
-                USer
+             <h1>USER</h1>
             </div>
         )
     }
