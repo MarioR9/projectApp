@@ -45,32 +45,27 @@ export default class App extends React.Component {
     names = this.state.events.map(e => e.deporte)
     deporte = [...new Set(names)] //remote duplicate for each deporte..
     href = deporte.find(e => e === link)
-    return href
+    this.setState({currentEvent: href})
   }
   
   render(){
-    console.log(this.handleCategorySelection())
+    console.log(this.state.currentEvent)
     return (
-    <div >
-      <div>
-      <NavBar events={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
-      </div>
       <Router>
+      <NavBar events={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/${this.handleCategorySelection()}`}>
-            <Events events={this.state.events} event={this.handleCategorySelection(0)}/>
+            <Route path={`/${this.state.currentEvent}`}>
+            <Events events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/noticias'>
             <Noticias events={this.state.events} event={this.state.currentEvent}/>
             </Route>
           </Switch>
       </Router>
-      </div>
-    
   );
   }
 }
