@@ -13,9 +13,6 @@ import NavBar from './components/navigation.js' //exported component.
 import Noticias from './components/noticias.js'
 import Events from './components/events.js'
 
-let names;
-let deporte;
-let href;
 export default class App extends React.Component {
   
   constructor(props) {
@@ -35,17 +32,14 @@ export default class App extends React.Component {
         'Content-Type': 'application/json',
       },
         })
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response=> response.json())
+        .then(data => {
         this.setState({events: data}) //respose will set the state for events heading.
         })
   }
 
   handleCategorySelection=(link)=>{
-    names = this.state.events.map(e => e.deporte)
-    deporte = [...new Set(names)] //remote duplicate for each deporte..
-    href = deporte.find(e => e === link)
-    this.setState({currentEvent: href})
+    this.setState({currentEvent: link})
   }
   
   render(){
