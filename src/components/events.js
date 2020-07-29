@@ -2,7 +2,7 @@ import React from 'react'
 import { Button , CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 export default class Events extends React.Component{
-  
+  //creates a card for each event on database
     render(){
         let currentEvent= this.props.events.filter(event => event.deporte === this.props.event)
         return(

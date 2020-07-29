@@ -44,16 +44,18 @@ export default class App extends React.Component {
   }
   
   render(){
-    console.log(this.state.currentEvent)
     return (
+    <div>
       <Router>
-      <NavBar events={this.state.events} handleCategorySelection={this.handleCategorySelection}/>
+      <NavBar events={this.state.events} handleCategorySelection={()=>this.handleCategorySelection}/>
           <Switch>
             <Route exact path='/'><Redirect to="/home" /></Route>
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-           
+            <Route path={`/events`}>
+            <Events events={this.state.events} event={this.state.currentEvent}/>
+            </Route>
             <Route path='/noticias'>
             <Noticias events={this.state.events} event={this.state.currentEvent}/>
             </Route>
@@ -62,6 +64,8 @@ export default class App extends React.Component {
             </Route>
           </Switch>
       </Router>
+    </div>
+     
   );
   }
 }
