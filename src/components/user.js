@@ -14,11 +14,11 @@ export default class User extends React.Component{
 
         return(
             <div>
-                <div>
+                <div className="container-user">
                 <Tabs
                     id="controlled-tab-example"
                     activeKey={this.state.key}
-                    onSelect={(k) => this.setState({key: k})}
+                    onSelect={(e) => this.setState({key: e})}
                     >
                     <Tab eventKey="profile" title="Profile">
                         <Profile/>
