@@ -11,6 +11,16 @@
   padding: 1px;
   position: relative;
 }
+.card2 {
+  opacity: 0.6;
+  padding: 2px;
+  position: relative;
+}
+.card3 {
+  opacity: 0.6;
+  padding: 1px;
+  position: relative;
+}
 .card-img {
   height: 150px;; 
   width: 100%;
