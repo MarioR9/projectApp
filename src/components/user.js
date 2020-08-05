@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs , Tab, Card, Button, Row, Col, Container} from 'react-bootstrap';
+import { Tabs , Tab, Card, Row, Col, Container} from 'react-bootstrap';
 import Profile from './userComponents/profile.js'
 import Edit from './userComponents/edit.js'
 
@@ -21,10 +21,7 @@ export default class User extends React.Component{
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" />
                 <Card.Body>
-                    <Card.Title>User Name</Card.Title>
-                    <Card.Text>
-                    User Details
-                    </Card.Text>
+                    <Card.Title>Nombre</Card.Title>
                 </Card.Body>
                 </Card>
                 </div>
