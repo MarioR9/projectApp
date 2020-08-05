@@ -7,7 +7,7 @@ export default class User extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            key: "Profile"
+            key: "profile"
         };
       }
     render(){
@@ -19,14 +19,12 @@ export default class User extends React.Component{
                     <Col>
                     <div>
                 <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>User Name</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    User Details
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
                 </Card>
                 </div>
