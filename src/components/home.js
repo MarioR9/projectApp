@@ -13,7 +13,7 @@ export default class Home extends React.Component{
    render(){
        return(
            <div className="container-event">
-
+            {console.log(this.props.events)}
             <Container fluid>
               <Row>
                 <Col>

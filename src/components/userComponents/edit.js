@@ -6,6 +6,7 @@ export default class Edit extends React.Component{
     render(){
         return(
             <div>
+                <br></br>
                <Form.Group>
                     <Form.Row>
                         <Form.Label column lg={2}>

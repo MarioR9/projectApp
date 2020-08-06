@@ -20,6 +20,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       currentEvent: "",
+      date: new Date(),
       events: []};
   }
   
@@ -42,7 +43,7 @@ export default class App extends React.Component {
   handleCategorySelection=(link)=>{
     this.setState({currentEvent: link})
   }
-  
+
   render(){
     return (
     <div>
