@@ -53,7 +53,7 @@ export default class App extends React.Component {
             <Route path='/home'>
             <Home events={this.state.events}/>
             </Route>
-            <Route path={`/events`}>
+            <Route path={'/events'}>
             <Events events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/noticias'>

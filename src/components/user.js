@@ -29,7 +29,7 @@ export default class User extends React.Component{
                     <Col>
                     <div>
                 <Tabs
-                    id="controlled-tab-example"
+                    id="controlled-tab-"
                     activeKey={this.state.key}
                     onSelect={(e) => this.setState({key: e})}
                     >

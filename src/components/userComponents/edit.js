@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col, Row} from 'react-bootstrap';
+import { Form, Col} from 'react-bootstrap';
 
 
 export default class Edit extends React.Component{

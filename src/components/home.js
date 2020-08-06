@@ -1,8 +1,15 @@
 import React from 'react'
 import { Card,Button , CardDeck, Container, Row, Col } from 'react-bootstrap';
-
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 export default class Home extends React.Component{
-   
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: new Date()
+    };
+  }
+  onChange = date => this.setState({ date })
    render(){
        return(
            <div className="container-event">
@@ -30,6 +37,14 @@ export default class Home extends React.Component{
                 </Col>
                 <Col>
                 <h2>Utilidades</h2>
+                <div>
+                <Calendar
+                  onChange={this.onChange}
+                  value={this.state.date}
+                  
+                />
+                {console.log(this.state.date)}
+                </div>
                 </Col>
               </Row>
             </Container>

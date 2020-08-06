@@ -1,9 +1,7 @@
 .container-event{
   position: relative;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .container-user{
   position: relative;
