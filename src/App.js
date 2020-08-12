@@ -25,7 +25,7 @@ export default class App extends React.Component {
       user:[]};
   }
   componentDidMount=()=>{
-    fetch('http://localhost:3000/api/v1/events', {
+    fetch('http://localhost:3000/api/v1/users', {
       method: 'GET', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -33,8 +33,17 @@ export default class App extends React.Component {
         })
         .then(response=> response.json())
         .then(data => {
-        this.setState({events: data, user: data.user}) //respose will set the state for events heading.
-        })
+        this.setState({events: data}) //respose will set the state for events heading.
+        }).then(fetch('http://localhost:3000/api/v1/events', {
+          method: 'GET', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+          },
+            })
+            .then(response=> response.json())
+            .then(data => {
+            this.setState({user: data}) //respose will set the state for events heading.
+            }))
   }
 
   handleCategorySelection=(link)=>{
