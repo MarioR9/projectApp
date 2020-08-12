@@ -58,7 +58,7 @@ export default class App extends React.Component {
             <Noticias events={this.state.events} event={this.state.currentEvent}/>
             </Route>
             <Route path='/user'>
-            <User/>
+            <User user={this.state.user}/>
             </Route>
           </Switch>
       </Router>
