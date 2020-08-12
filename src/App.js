@@ -21,12 +21,9 @@ export default class App extends React.Component {
     this.state = {
       currentEvent: "",
       date: new Date(),
-      events: []};
+      events: [],
+      user:[]};
   }
-  
-//fetch all event on load of the page.
-//maybe be better to load on request only. but all at once.
-
   componentDidMount=()=>{
     fetch('http://localhost:3000/api/v1/events', {
       method: 'GET', // or 'PUT'
@@ -36,7 +33,7 @@ export default class App extends React.Component {
         })
         .then(response=> response.json())
         .then(data => {
-        this.setState({events: data}) //respose will set the state for events heading.
+        this.setState({events: data, user: data.user}) //respose will set the state for events heading.
         })
   }
 
