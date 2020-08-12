@@ -22,7 +22,7 @@ export default class User extends React.Component{
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" />
                 <Card.Body>
-                    <Card.Title>Nombre</Card.Title>
+                    <Card.Title>{this.props.user.name}</Card.Title>
                 </Card.Body>
                 </Card>
                 </div>
@@ -35,7 +35,7 @@ export default class User extends React.Component{
                     onSelect={(e) => this.setState({key: e})}
                     >
                     <Tab eventKey="profile" title="Profile">
-                        <Profile/>
+                        <Profile userDetails={this.props.user}/>
                     </Tab>
                     <Tab eventKey="edit" title="Edit" >
                         <Edit/>
